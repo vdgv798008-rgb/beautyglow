@@ -1,0 +1,494 @@
+body{
+    background: #fdf6f8;
+    color: #6e4d57;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("fondo2.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    z-index: -1;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* MARQUESINA */
+
+.top-marquee{
+    width: 100%;
+    overflow: hidden;
+    background: #e8bfc9;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.marquee-content{
+    white-space: nowrap;
+    animation: mover 10s linear infinite;
+}
+
+@keyframes mover{
+
+    from{
+        transform: translateX(100%);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
+
+}
+
+/* NAVBAR */
+
+nav{
+    background: #f4d7de;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: #5c4b51;
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #213D7A !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links li a:hover{
+    color: #213D7A !important;
+    
+}
+
+
+/* SECCIONES */
+
+section{
+    display: none;
+    padding: 40px;
+}
+
+section.active{
+    display: block;
+}
+
+.h2{
+    color: #911F78;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* CARRUSEL */
+
+.carousel{
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel img{
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
+
+/* NOSOTROS */
+/* Este contenedor evita que se mezcle con el menú */
+.seccion-quienes {
+  padding: 80px 100px; /* Espacio para que el círculo no choque arriba */
+  display: flex;
+  justify-content: center;
+  background-color: #fce4ec;  /* Color de fondo de la página */
+}
+
+.tarjeta-quienes {
+  background-color: #f1cbd6; /* El rosado de tu caja */
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  padding: 100px 50px 50px 50px; /* Mucho padding arriba para dejar espacio a la foto */
+  position: relative; 
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.foto-quienes {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid white;
+  overflow: hidden;
+  background-color: white;
+  
+  /* Esto lo centra exactamente en el borde superior de la caja */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.foto-quienes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-quienes h2 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #ffff;
+}
+
+.texto-quienes .subtitulo {
+   font-family: "Dancing Script", cursive;
+    color: #ffff;
+    font-size: 1.5rem;
+}
+
+
+
+/* MISION */
+
+
+#mision{
+    display: none;
+}
+
+#mision.active{
+    display: flex;
+}
+
+.mision-vision{
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.mv-card{
+    width: 320px;
+    background: #e8bfc9;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.mv-card h2{
+    color: #b03060;
+    font-family: "Dancing Script", cursive;
+}
+
+.mv-card p{
+
+    line-height: 1.7;
+    font-family: "Dancing Script", cursive;
+}
+
+/* PRODUCTOS */
+
+.contenedor-productos{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta{
+    background: #e8bfc9;
+    border-radius: 20px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.tarjeta:hover{
+    transform: translateY(-5px);
+}
+
+.imagen-producto{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.nombre-producto{
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: "Dancing Script", cursive !important;
+    color: #213D7A;
+
+}
+
+.precio-producto{
+    color: #911F78;
+    font-size: 20px;
+    font-weight: bold;
+}
+.producto{
+    transition: transform 0.3s ease;
+}
+
+.producto:hover{
+    transform: translateY(-8px);
+}
+/* PROVEEDORES */
+
+.grid{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#proveedores .card{
+    width: 500px;
+    border-radius: 20px;
+    background: #e8bfc9;
+    border: none;
+}
+
+#proveedores img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* CLIENTES */
+
+.client-item{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #f5c6d6;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.client-item img{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.client-item strong{
+    font-size: 28px;
+}
+
+.client-item span{
+    color: #911F78;
+    font-weight: bold;
+}
+
+/* CONTACTO */
+#contacto{
+    display: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#contacto.active{
+    display: flex;
+}
+mb-3{
+   background: #911F78 !important;
+    color: white !important;
+    width: 100%;  
+}
+
+.ubicacion{
+    flex: 1;
+    background: #f5c6d6;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+form{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.btn{
+    background: #911F78 !important;
+    color: white !important;
+    width: 100%;
+}
+
+.ubicacion iframe{
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    border: none;
+}
+
+/* FOOTER */
+
+footer{
+    background: #f4d7de;
+    text-align: center;
+    padding: 20px;
+     width: 100vw;
+    margin: 0;
+    margin-left: calc(-50vw + 50%);
+}
+
+.footer-motto{
+    font-size: 20px;
+    font-weight: bold;
+font-family: "Dancing Script", cursive;
+
+    color: #213D7A !important;
+  
+}
+
+
+.nav-links li a:hover{
+    color: #213D7A !important;
+}
+}
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction: column;
+        gap: 15px;
+       
+    }
+    
+
+    .client-item{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #contacto{
+        flex-direction: column;
+    }
+
+    .about-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.texto-brillante {
+            
+
+            font-size: 30px;
+        
+            text-transform: uppercase;
+            color: #b03060;
+font-family: "Dancing Script", cursive;
+            
+ }
+ .footer-motto{
+        color: #b03060;
+ }
+.prod{
+color: #b03060;
+font-family: "Dancing Script", cursive;
+ }
+ .bien{
+    color: #b03060;
+    font-family: "Dancing Script", cursive;
+
+ }
+.Qui{
+color: #b03060;
+font-family: "Dancing Script", cursive;
+ }
+
+.logo{
+    font-family: "Dancing Script", cursive;
+    font-size: 45px;
+}
+
+.proved{
+    font-family: "Dancing Script", cursive;
+    color: #b03060;
+}
+.pr{
+     font-family: "Dancing Script", cursive;
+    color: #b03060;
+}
+.inf{
+    font-family: "Dancing Script", cursive;
+    color: #ffff;
+}
+.op{
+    font-family: "Dancing Script", cursive !important;
+    color: #b03060; 
+    .op{
+    font-family: "Dancing Script", cursive !important;
+    color: #213D7A !important;
+}
+}
+.punto{
+    font-family: "Dancing Script", cursive !important;
+    color: #213D7A;
+    font-size: 25px;
+    
+}
+.tex{
+    font-family: "Dancing Script", cursive !important;
+    color: #b03060;
+    font-size: 35px;
+    
+}
+section{
+    padding: 80px 0;
+}
+@media (max-width: 768px){
+    
+}
